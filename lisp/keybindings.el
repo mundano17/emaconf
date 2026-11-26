@@ -27,6 +27,10 @@
     ","   '(consult-buffer :which-key "Switch buffer")
     "?"   '(consult-imenu :which-key "Jump to symbol/function")
 
+    ;; project
+    "p" '(:ignore t :which-key "project")
+    "pp" '(project-switch-project :which-key "choose project")
+
     ;; code 
     "c"   '(:ignore t :which-key "code")
     "ca"  '(eglot-code-actions :which-key "Code actions")
@@ -79,5 +83,6 @@
   (kbd "[d") #'flymake-goto-prev-error)
 
 
+(keymap-global-set "C-c r" #'eval-buffer)
 
 (provide 'keybindings)

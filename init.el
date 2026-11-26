@@ -30,12 +30,12 @@
 
 (setq use-package-always-ensure t)
 
+(use-package exec-path-from-shell
+  :ensure t
+  )
 
-(defun load-env ()
-    (add-to-list 'exec-path "/opt/homebrew/bin")
-  (setenv "PATH" (concat "/opt/homebrew/bin:" (getenv "PATH"))))
-
-(load-env)
+(when (memq window-system '(mac ns x pgtk))
+  (exec-path-from-shell-initialize))
 
 ;; Configuration modules
 (require 'ui)
@@ -44,3 +44,6 @@
 (require 'keybindings)
 (require 'theme)
 (require 'org-conf)
+(require 'treesit-conf)
+(require 'eglot-conf)
+(require 'treemacs-conf)

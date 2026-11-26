@@ -1,7 +1,13 @@
 ;; -*- lexical-binding: t; -*-
-(use-package doom-themes
+
+(use-package nerd-icons
+  :ensure t
+  )
+
+
+(use-package catppuccin-theme
+  :ensure t
   :config
-  (load-theme 'doom-tokyo-night t)
-  (doom-themes-org-config))
+  (load-theme 'catppuccin t))
 
 (provide 'theme)

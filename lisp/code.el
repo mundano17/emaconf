@@ -60,6 +60,9 @@
 
 (may-the-ts-mode-be-with-me)
 
+(setq treesit-font-lock-level 4)
+
+(add-hook 'go-ts-mode-hook  (lambda () (setq-local tab-width 4)))
 
 (use-package corfu
   :custom
