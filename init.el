@@ -30,6 +30,13 @@
 
 (setq use-package-always-ensure t)
 
+
+(defun load-env ()
+    (add-to-list 'exec-path "/opt/homebrew/bin")
+  (setenv "PATH" (concat "/opt/homebrew/bin:" (getenv "PATH"))))
+
+(load-env)
+
 ;; Configuration modules
 (require 'ui)
 (require 'code)

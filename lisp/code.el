@@ -1,5 +1,13 @@
 ;; -*- lexical-binding: t; -*-
 
+(use-package mood-line
+  :config
+  (mood-line-mode))
+
+(use-package magit
+  :ensure t)
+
+
 (use-package eglot
   :ensure nil
   :hook ((go-ts-mode
@@ -36,9 +44,9 @@
           (r "https://github.com/r-lib/tree-sitter-r")
           (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
           (typescript "https://github.com/tree-sitter/tree-sitter-typescript"
-                      "master" "typescript/src")
+		      "master" "typescript/src")
           (tsx "https://github.com/tree-sitter/tree-sitter-typescript"
-               "master" "tsx/src")
+	       "master" "tsx/src")
           (html "https://github.com/tree-sitter/tree-sitter-html")
           (css "https://github.com/tree-sitter/tree-sitter-css"))))
 
@@ -47,7 +55,7 @@
   (interactive)
   (set-ts-grammar-sources)
   (dolist (grammar '(c cpp go rust python r javascript
-                       typescript tsx html css))
+		       typescript tsx html css))
     (treesit-install-language-grammar grammar)))
 
 (may-the-ts-mode-be-with-me)

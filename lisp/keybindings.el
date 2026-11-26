@@ -35,6 +35,12 @@
     "cd"  '(xref-find-definitions :which-key "Go to definition")
     "cD"  '(xref-find-references :which-key "Find references")
     "ce"  '(consult-flymake :which-key "List errors/diagnostics")
+
+    ;;magit
+    "g" '(:ignore t :which-key "magit")
+    "gg" '(magit :which-key "open magit")
+    "gc" '(magit-commit :which-key "magit commit")
+
     
     ;; files
     "f"   '(:ignore t :which-key "files")
