@@ -6,3 +6,5 @@ auto-save-list/
 .cache/
 *~
 projects
+tree-sitter/
+

@@ -4,6 +4,10 @@
   (setq which-key-idle-delay 0.3)
   (which-key-mode 1))
 
+(defun open-config ()
+  (interactive)
+  (dired user-emacs-directory))
+
 (use-package general
   :after evil
   :config
@@ -54,8 +58,12 @@
     "wl"  '(evil-window-right :which-key "Window right")
 
     ;; org mode
-    "m" '(:ignore t :which-key "org")
-    "mdd" '(org-deadline :which-key "insert deadline")
+    "o" '(:ignore t :which-key "org")
+    "odd" '(org-deadline :which-key "insert deadline")
+
+    ;; miscelleneous
+    "m" '(:ignore t :which-key "miscelleneous")
+    "mk" '(open-config :which-key "open config")
 
     ;; workspaces
     "TAB" '(perspective-map :which-key "Workspaces")))

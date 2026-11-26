@@ -10,10 +10,15 @@
      "3613617b9953c22fe46ef2b593a2e5bc79ef3cc88770602e7e569bbd71de113b"
      default))
  '(package-selected-packages
-   '(apheleia cape consult corfu doom-themes evil-collection evil-org
-	      flycheck-inline flymake-golangci flymake-inline general
-	      marginalia orderless org-modern perspective
-	      treemacs-evil treesit-auto vertico which-key)))
+   '(all-the-icons apheleia cape consult corfu dashboard doom-dashboard
+		   doom-themes evil-collection evil-org
+		   flycheck-inline flymake-golangci flymake-inline
+		   general marginalia minimal-dashboard orderless
+		   org-modern perspective treemacs-evil vertico
+		   which-key))
+ '(package-vc-selected-packages
+   '((doom-dashboard :url
+		     "https://github.com/emacs-dashboard/doom-dashboard.git"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
