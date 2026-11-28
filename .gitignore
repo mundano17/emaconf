@@ -9,3 +9,4 @@ projects
 tree-sitter/
 transient/
 .DS_Store
+tramp

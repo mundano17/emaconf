@@ -44,3 +44,4 @@
 (add-hook 'go-ts-mode-hook  (lambda () (setq-local tab-width 4)))
 
 (provide 'treesit-conf)
+

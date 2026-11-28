@@ -4,10 +4,9 @@
   :ensure t
   )
 
-
-(use-package catppuccin-theme
+(use-package au-themes
   :ensure t
   :config
-  (load-theme 'catppuccin t))
+  (load-theme 'au-yerba-night t))
 
 (provide 'theme)

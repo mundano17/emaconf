@@ -70,6 +70,7 @@
     (treemacs-resize-icons 44)
 
     (treemacs-follow-mode t)
+    (treemacs-project-follow-mode t)
     (treemacs-filewatch-mode t)
     (treemacs-fringe-indicator-mode 'always)
 
@@ -87,14 +88,13 @@
 
 
   :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t 1"   . treemacs-delete-other-windows)
-        ("C-x t t"   . treemacs)
-        ("C-x t d"   . treemacs-select-directory)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)))
+  (:map treemacs-mode-map
+	("a" . treemacs-create-file)
+	("d" . treemacs-delete-file)
+	("A" . treemacs-create-dir)
+	("r" . treemacs-rename-file)
+	("R" . treemacs-refresh)))
+
 
 (use-package treemacs-evil
   :after (treemacs evil)

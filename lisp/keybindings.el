@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t; -*-
+
 (use-package which-key
   :config
   (setq which-key-idle-delay 0.3)
@@ -39,7 +40,8 @@
     "cd"  '(xref-find-definitions :which-key "Go to definition")
     "cD"  '(xref-find-references :which-key "Find references")
     "ce"  '(consult-flymake :which-key "List errors/diagnostics")
-
+    "cE"  '(flymake-show-project-diagnostics :which-key "List errors/diagnostics (flymake)")
+    
     ;;magit
     "g" '(:ignore t :which-key "magit")
     "gg" '(magit :which-key "open magit")

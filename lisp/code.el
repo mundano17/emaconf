@@ -4,9 +4,11 @@
   :config
   (mood-line-mode))
 
+(add-to-list 'load-path
+             (expand-file-name "lisp/language_conf" user-emacs-directory))
+
 (use-package magit
   :ensure t)
-
 
 (use-package corfu
   :custom
@@ -29,19 +31,25 @@
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff-isort ruff))
   (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff-isort ruff))
 
+  (setf (alist-get 'air apheleia-formatters)
+        '("air" "format" "--stdin-file-path" filepath))
+  (setf (alist-get 'ess-r-mode apheleia-mode-alist) 'air)
+
   ;; Enable format-on-save globally
   (apheleia-global-mode 1))
-
-(use-package flymake-golangci
-  :hook (eglot-managed-mode . (lambda ()
-                                (when (derived-mode-p 'go-mode 'go-ts-mode)
-                                  (flymake-golangci-load)))))
 
 (use-package consult
   :bind (("C-s" . consult-line)
 	 ("C-x b" . consult-buffer)))
 
-(use-package flycheck-inline
-  :hook (flymake-mode . flymake-inline-mode))
+(use-package flymake
+  :ensure nil 
+  :hook (prog-mode . flymake-mode)
+  :custom
+  (flymake-no-changes-timeout 0.5)
+  (flymake-show-diagnostics-at-end-of-line 'short))
 
+(require 'go-conf)
+(require 'elisp-conf)
 (provide 'code)
+

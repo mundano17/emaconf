@@ -8,8 +8,13 @@
           tsx-ts-mode
           js-ts-mode
           html-mode
-          css-ts-mode) . eglot-ensure)
+          css-ts-mode
+	  r-ts-mode) . eglot-ensure)
   :config
   (setq eglot-autoshutdown t))
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(ess-r-mode . ("air" "language-server"))))
 
 (provide 'eglot-conf)
